@@ -13,6 +13,8 @@ Basic functionality is working :
 * HDMI to an external monitor (even with the lid closed). Tested with a Dell UZ2715Hb monitor that has 1080p max resolution.
 * Trackpad
 * Mouse button (to steer the mouse pointer)
+* Adaptive brightness (as weird as with _Windows_)
+* Fan are quieter with _Linux_
 
 I haven't tested much more than that.
 
@@ -89,6 +91,14 @@ Here is the steps to boot from the USB drive :
 * Boot the computer
 * On the boot screen displaying HP Logo "Sure boot by HP" press F9
 * Choose the USB UEFI entry
+
+Proceed with usual Fedora installation :
+
+* Review the partition scheme (default/automatic was fine)
+* Launch the installation
+* Reboot
+
+User creation will be at first boot.
 
 Here is the partition table :
 
