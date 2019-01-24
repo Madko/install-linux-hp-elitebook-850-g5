@@ -79,10 +79,10 @@ Here is the steps to disable _secure boot_ :
 * Press F10
 * Yes to save the changes
 * Computer boots on a warning screen, you have to enter the displayed code :
-** Press Num lock
-** Enter the code
-** Press "Enter"
-** Computer reboots with _secure boot_ disabled
+  * Press Num lock
+  * Enter the code
+  * Press "Enter"
+  * Computer reboots with _secure boot_ disabled
 
 Here is the steps to boot from the USB drive :
 
