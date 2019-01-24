@@ -10,9 +10,12 @@ Right now this document is only half-way finished. Hopefully I will find time to
 Basic functionality is working :
 
 * WIFI
+* Keyboard and shortcuts
+* Touchpad
 * Mouse button (to steer the mouse pointer)
 * Adaptive brightness (as weird as with _Windows_)
-* Fan are quieter with _Linux_
+* Webcam
+* Fan is quieter with _Linux_
 
 I haven't tested much more than that.
 
