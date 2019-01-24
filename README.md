@@ -142,7 +142,7 @@ https://github.com/eriksjolund/install-linux-hp-elitebook-850-g5/issues/2
 
 ### sudo lshw -sanitize
 
-    linux@laptop:~$ sudo lshw -santize > output/lshw.txt
+    linux@laptop:~$ sudo lshw -sanitize > output/lshw.txt
     [sudo] password for linux:
     linux@laptop:~$
 
