@@ -120,18 +120,21 @@ The EXT4 file system is used with LVM, ie default partitionning scheme from Fedo
 
 ### BIOS update
 
-TO BE EDITED:
-
 I rebooted the laptop and went into the BIOS. From there it was possible to download
 and install a newer version of the BIOS.
 
-An even newer version of the BIOS is available from the HP web page
+Actual version of the BIOS :
 
-    HP Firmware Pack (Q78)  01.03.00 Rev.A	 16.5 MB	22 aug 2018
+    Version: Q78 Ver. 01.04.00
+    Release Date: 09/12/2018
+
+An even newer version of the BIOS is available from the HP web page :
+
+    HP Firmware Pack (Q78) 01.04.00 Rev.A	16.5 MB	Oct 11, 2018
 
 https://support.hp.com/us-en/drivers/selfservice/hp-elitebook-850-g5-notebook-pc/18491276
 
-but I wonder how to install it:
+How to install it :
 
 https://github.com/eriksjolund/install-linux-hp-elitebook-850-g5/issues/2
 
