@@ -1,13 +1,13 @@
-# Running Linux (Ubuntu Desktop 18.04.1) on HP Elitebook 850 G5
+# Running Linux (Fedora 29) on HP Elitebook 850 G5
 
-Sharing some experiences about running Ubuntu on an HP Elitebook 850 G5 laptop.
+Sharing some experiences about running Fedora on an HP Elitebook 850 G5 laptop.
 
 
 Right now this document is only half-way finished. Hopefully I will find time to provide some more information.
 
 ## What works
 
-Basic functionality is working
+Basic functionality is working :
 
 * WIFI
 * HDMI to an external monitor (even with the lid closed). Tested with a Dell UZ2715Hb monitor that has 1080p max resolution.
@@ -18,19 +18,20 @@ I haven't tested much more than that.
 
 ## Customization of the laptop
 
-The laptop was customized by me and then assembled by HP like this
+The laptop configuration was like this :
 
-    HP IDS UMA i5-8250U 850 G5 Base NB PC 
-    FreeDOS 2.0 SE/FI 
-    No Webcam 
-    15.6 inch FHD (1920x1080) Anti-Glare LED UWVA 220 slim 
-    32GB (2x16GB) DDR4 2400 
-    1TB PCIe NVMe Three Layer Cell Solid State Drive 
+    HP EliteBook 850 G5
+    CPU Intel i7-8550U
+    Windows 10 PRO
+    Webcam + IR
+    15.6 inch UHD Anti-Glare LDE
+    8GB (1x8GB) DDR4 2400 
+    512GB PCIe NVMe Three Layer Cell Solid State Drive 
     No Near Field Communication (No NFC) 
     Intel 8265 ac 2x2 nvP +Bluetooth 4.2 WW with 2 Antennas 
-    No WWAN 
-    No Fingerprint Sensor 
-    Active SmartCard 
+    No WWAN ??
+    Fingerprint Sensor 
+    No Active SmartCard 
     3 Cell 56 WHr Long Life 
     45 Watt Smart nPFC Right Angle AC Adapter 
     C5 1.8m Sticker Conventional Power Cord SE/FI 
@@ -40,51 +41,78 @@ The laptop was customized by me and then assembled by HP like this
     Country Localization SE/FI 
     Dual Point with numeric keypad spill-resistant Collaboration SE/FI 
     EU RED Pictogram Label 
-    Core i5 G8 Label 
+    Core i7 G8 Label 
     HP 1 year Priority Management Service for PCs (1000+ seats) 
     HP 3 year Next Business Day Onsite Notebook Only Hardware Support 
     HP Operations Service
 
-The laptop was delivered to me in the end of August 2018.
+The laptop was delivered to me in the end of January 2019.
 
-Short summary of hardware configuration
+Short summary of hardware configuration :
 
-* RAM : 32 GB RAM
-* Operating system : FreeDOS
-* 1TB SSD
-* 15.6" inch screen (resolution 1920x1080)
+* RAM : 8 GB RAM
+* Operating system : Windows 10 Pro
+* 512 GB SSD
+* 15.6" inch screen (resolution 3840x2160)
 
 ## Installation
 
-The computer came with _FreeDOS_ already installed. 
-Instead of using FreeDOS, I installed Ubuntu 18.04.1 (wiping the whole hard drive).
-Unfortunately, it was a few weeks since I performed the installation so I don't remember the details.
-I believe it was straightforward (selecting default choices).
+The computer came with _Windows 10 Pro_ installed with 3 partitions. I split the C: in half to install Linux.
 
-Here is the partition table
+Here is the steps to reduce C:\ volume :
 
-    root@laptop:~# fdisk -l /dev/nvme0n1
-    Disk /dev/nvme0n1: 953,9 GiB, 1024209543168 bytes, 2000409264 sectors
-    Units: sectors of 1 * 512 = 512 bytes
-    Sector size (logical/physical): 512 bytes / 512 bytes
-    I/O size (minimum/optimal): 512 bytes / 512 bytes
-    Disklabel type: gpt
-    Disk identifier: 06016D96-2E6A-4584-9897-E9C6E2DDD47B
+* In Windows, right click on _Start menu_ logo > Disks Management
+* Right click on C:
+* Reduce this volume, by default it's set on half its size
+* Accept the changes and reboot
+
+Download Fedora 29 Workstation Live x86_64 and write it on an USB drive.
+
+If _Windows_ was pre-installed, _secure boot_ is enabled and you will get "Image did not authenticate", preventing you to boot any other OS.
+
+Here is the steps to disable _secure boot_ :
+
+* Boot the computer
+* On the boot screen displaying HP Logo "Sure boot by HP" press F10
+* Go to _Advanced_ > _Secure Boot Options_
+* Choose _Legacy support enabled and secure boot disabled_
+* Press F10
+* Yes to save the changes
+* Computer boots on a warning screen, you have to enter the displayed code :
+** Press Num lock
+** Enter the code
+** Press "Enter"
+** Computer reboots with _secure boot_ disabled
+
+Here is the steps to boot from the USB drive :
+
+* Boot the computer
+* On the boot screen displaying HP Logo "Sure boot by HP" press F9
+* Choose the USB UEFI entry
+
+Here is the partition table :
+
+    [edouard@hp850g5 ~]$ lsblk -o NAME,MOUNTPOINT,LABEL,FSTYPE
+    NAME            MOUNTPOINT LABEL            FSTYPE
+    nvme0n1                                     
+    ├─nvme0n1p1     /boot/efi  SYSTEM           vfat
+    ├─nvme0n1p2                                 
+    ├─nvme0n1p3                Windows          ntfs
+    ├─nvme0n1p4                Windows RE Tools ntfs
+    ├─nvme0n1p5     /boot                       ext4
+    └─nvme0n1p6                                 LVM2_member
+      ├─fedora-root /                           ext4
+      ├─fedora-swap [SWAP]                      swap
+      └─fedora-home /home                       ext4
+
     
-    Device           Start      End  Sectors  Size Type
-    /dev/nvme0n1p1    2048  7999487  7997440  3,8G EFI System
-    /dev/nvme0n1p2 7999488 39999487 32000000 15,3G Linux filesystem
-    root@laptop:~#
-    
-The EXT4 file system is used
-
-    root@laptop:~# file -s /dev/nvme0n1p2 
-    /dev/nvme0n1p2: Linux rev 1.0 ext4 filesystem data, UUID=9b426948-95ac-4325-8f42-f3ba5fd94f7a (needs journal recovery) (extents) (64bit) (large files) (huge files)
-    root@laptop:~# 
+The EXT4 file system is used with LVM, ie default partitionning scheme from Fedora.
 
 
 
 ### BIOS update
+
+TO BE EDITED:
 
 I rebooted the laptop and went into the BIOS. From there it was possible to download
 and install a newer version of the BIOS.
