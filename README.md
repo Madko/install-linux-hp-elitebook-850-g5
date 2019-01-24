@@ -10,8 +10,6 @@ Right now this document is only half-way finished. Hopefully I will find time to
 Basic functionality is working :
 
 * WIFI
-* HDMI to an external monitor (even with the lid closed). Tested with a Dell UZ2715Hb monitor that has 1080p max resolution.
-* Trackpad
 * Mouse button (to steer the mouse pointer)
 * Adaptive brightness (as weird as with _Windows_)
 * Fan are quieter with _Linux_
