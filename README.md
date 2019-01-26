@@ -27,6 +27,12 @@ What is not working :
 * Fingerprint sensor
 * Mic mute button
 
+To be tested :
+
+* HDMI external port
+* Thunderbolt 3 port
+* WWAN LTE card (not even sure I've got one)
+
 ## Customization of the laptop
 
 The laptop configuration was like this :
