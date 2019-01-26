@@ -24,6 +24,7 @@ What seems buggy :
 
 What is not working :
 
+* Fingerprint sensor
 * Mic mute button
 
 ## Customization of the laptop
