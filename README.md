@@ -150,7 +150,7 @@ Reboot the computer (or unload/reload module _snd-hda-intel_).
 Powertop utiliy is a great tool to fix some power consumption issues.
 
     sudo dnf install powertop
-    powertop
+    sudo powertop
 
 In _tunables_ section a few setups by default are bad. Select them and press _space bar_ to activate them. Press _ESC_ to exit. Then enable _powertop_ service at boot to make these changes permanent :
 
