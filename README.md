@@ -7,17 +7,25 @@ Right now this document is only half-way finished. Hopefully I will find time to
 
 ## What works
 
-Basic functionality is working :
+Basic functionality is working (kernel 4.20.3-200.fc29.x86_64) :
 
 * WIFI
-* Keyboard and shortcuts
+* Keyboard, keyboard backlight and shortcuts
 * Touchpad
 * Mouse button (to steer the mouse pointer)
 * Adaptive brightness (as weird as with _Windows_)
 * Webcam
-* Fan is quieter with _Linux_
 
 I haven't tested much more than that.
+
+What seems buggy :
+
+* Touchpad was once stuck in scrolling mode
+* Reboots often end on a black screen
+
+What is not working :
+
+* Mic mute button
 
 ## Customization of the laptop
 
@@ -119,9 +127,19 @@ Here is the partition table :
     
 The EXT4 file system is used with LVM, ie default partitionning scheme from Fedora.
 
+## Tuning
 
+### Sound mute button LED
 
-### BIOS update
+The shortcut button to mute sound is working fine but the LED on it doesn't switch on to indicate its state.
+
+To activate the LED, create a file to /etc/modprobe.d/sound.conf with the following content :
+
+   options snd-hda-intel model=mute-led-gpio
+
+Reboot the computer (or unload/reload module snd-hda-intel).
+
+## BIOS update
 
 I rebooted the laptop and went into the BIOS. From there it was possible to download
 and install a newer version of the BIOS.
