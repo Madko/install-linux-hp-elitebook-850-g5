@@ -68,7 +68,13 @@ Short summary of hardware configuration :
 
 ## Installation
 
-The computer came with _Windows 10 Pro_ installed with 3 partitions (EFI, Windows C:\, Restore tools). I split the C:\ in half to install Linux.
+The computer came with _Windows 10 Pro_ installed with 3 partitions :
+
+* EFI (360 MB) + hidden partition maybe for Windows restoration (128 MB)
+* Windows C:\ (~475 GB)
+* Restore tools (915 MB)
+
+Just split the C:\ in half (~235 GB) to install Linux.
 
 Here is the steps to reduce C:\ volume :
 
