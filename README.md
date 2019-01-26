@@ -2,7 +2,6 @@
 
 Sharing some experiences about running Fedora on an HP Elitebook 850 G5 laptop.
 
-
 Right now this document is only half-way finished. Hopefully I will find time to provide some more information.
 
 ## What works
@@ -72,22 +71,22 @@ The computer came with _Windows 10 Pro_ installed with 3 partitions. I split the
 
 Here is the steps to reduce C:\ volume :
 
-* In Windows, right click on _Start menu_ logo > Disks Management
-* Right click on C:
+* In Windows, right click on _Start menu_ logo > _Disks Management_
+* Right click on _C:\_
 * Reduce this volume, by default it's set on half its size
 * Accept the changes and reboot
 
-Download Fedora 29 Workstation Live x86_64 and write it on an USB drive.
+Download **Fedora 29 Workstation Live x86_64** and write it on an USB drive.
 
 If _Windows_ was pre-installed, _secure boot_ is enabled and you will get "Image did not authenticate", preventing you to boot any other OS.
 
 Here is the steps to disable _secure boot_ :
 
 * Boot the computer
-* On the boot screen displaying HP Logo "Sure boot by HP" press F10
+* On the boot screen displaying HP Logo "Sure boot by HP" press **F10**
 * Go to _Advanced_ > _Secure Boot Options_
 * Choose _Legacy support enabled and secure boot disabled_
-* Press F10
+* Press **F10**
 * Yes to save the changes
 * Computer boots on a warning screen, you have to enter the displayed code :
   * Press Num lock
@@ -98,7 +97,7 @@ Here is the steps to disable _secure boot_ :
 Here is the steps to boot from the USB drive :
 
 * Boot the computer
-* On the boot screen displaying HP Logo "Sure boot by HP" press F9
+* On the boot screen displaying HP Logo "Sure boot by HP" press **F9**
 * Choose the USB UEFI entry
 
 Proceed with usual Fedora installation :
@@ -131,25 +130,25 @@ The EXT4 file system is used with LVM, ie default partitionning scheme from Fedo
 
 ### Sound mute button _LED_
 
-The shortcut button to mute sound is working fine but the LED on it doesn't switch on to indicate its state.
+The shortcut button to mute sound is working fine but the _LED_ on it doesn't switch on to indicate its state.
 
 To activate the _LED_, create a file to _/etc/modprobe.d/sound.conf_ with the following content :
 
     options snd-hda-intel model=mute-led-gpio
 
-Reboot the computer (or unload/reload module snd-hda-intel).
+Reboot the computer (or unload/reload module _snd-hda-intel_).
 
-## BIOS update
+## _BIOS_ update
 
-I rebooted the laptop and went into the BIOS. From there it was possible to download
-and install a newer version of the BIOS.
+I rebooted the laptop and went into the _BIOS_. From there it was possible to download
+and install a newer version of the _BIOS_.
 
-Actual version of the BIOS :
+Actual version of the _BIOS_ :
 
     Version: Q78 Ver. 01.04.00
     Release Date: 09/12/2018
 
-An even newer version of the BIOS is available from the HP web page :
+An even newer version of the _BIOS_ is available from the HP web page :
 
     HP Firmware Pack (Q78) 01.04.00 Rev.A	16.5 MB	Oct 11, 2018
 
