@@ -129,13 +129,13 @@ The EXT4 file system is used with LVM, ie default partitionning scheme from Fedo
 
 ## Tuning
 
-### Sound mute button LED
+### Sound mute button _LED_
 
 The shortcut button to mute sound is working fine but the LED on it doesn't switch on to indicate its state.
 
-To activate the LED, create a file to /etc/modprobe.d/sound.conf with the following content :
+To activate the _LED_, create a file to _/etc/modprobe.d/sound.conf_ with the following content :
 
-   options snd-hda-intel model=mute-led-gpio
+    options snd-hda-intel model=mute-led-gpio
 
 Reboot the computer (or unload/reload module snd-hda-intel).
 
