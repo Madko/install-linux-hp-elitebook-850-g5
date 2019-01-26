@@ -188,3 +188,10 @@ See the output in [output/cpuinfo.txt](output/cpuinfo.txt)
     linux@laptop:~$
 
 See the output in [output/meminfo.txt](output/meminfo.txt)
+
+## Other references
+
+Original version of this document was forked from [eriksjolund](https://github.com/eriksjolund/install-linux-hp-elitebook-850-g5) (thanks).
+I've found this link on [reddit](https://www.reddit.com/r/Hewlett_Packard/comments/8ygk16/linux_on_hp_elitebook_850_g5/).
+
+Gentoo wiki also have some information [here](https://wiki.gentoo.org/wiki/HP_EliteBook_850_G5).
