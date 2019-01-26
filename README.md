@@ -196,6 +196,13 @@ See the output in [output/cpuinfo.txt](output/cpuinfo.txt)
 
 See the output in [output/meminfo.txt](output/meminfo.txt)
 
+### dmesg
+
+    linux@laptop:~$ dmesg > output/dmesg.txt
+    linux@laptop:~$
+
+See the output in [output/dmesg.txt](output/dmesg.txt)
+
 ## Other references
 
 Original version of this document was forked from [eriksjolund](https://github.com/eriksjolund/install-linux-hp-elitebook-850-g5) (thanks).
