@@ -165,6 +165,12 @@ In _tunables_ section a few setups by default are bad. Select them and press _sp
 
 Voilà !
 
+### CPU frequencies and _TurboBoost_
+
+To have more control on performance, the Gnome Shell Extension _CpuFreq_ is perfect. With this extension you can check the actual frequencies and choose which governor you want (powersave, performance etc).
+
+I prefere to disable _TurboBoost_, because I don't really see any difference on performance. But with _TurboBoost_ off, fans are off too !
+
 ## _BIOS_ update
 
 I rebooted the laptop and went into the _BIOS_. From there it was possible to download
