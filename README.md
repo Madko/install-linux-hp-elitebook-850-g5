@@ -14,6 +14,7 @@ Basic functionality is working (kernel 4.20.3-200.fc29.x86_64) :
 * Mouse button (to steer the mouse pointer)
 * Adaptive brightness (as weird as with _Windows_)
 * Webcam
+* Thermal sensors
 
 I haven't tested much more than that.
 
@@ -218,6 +219,13 @@ See the output in [output/meminfo.txt](output/meminfo.txt)
 ### dmesg
 
     linux@laptop:~$ dmesg > output/dmesg.txt
+    linux@laptop:~$
+
+See the output in [output/dmesg.txt](output/dmesg.txt)
+
+### Thermal sensors 
+
+    linux@laptop:~$ sensors > output/sensors.txt
     linux@laptop:~$
 
 See the output in [output/dmesg.txt](output/dmesg.txt)
