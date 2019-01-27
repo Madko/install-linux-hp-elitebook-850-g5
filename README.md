@@ -167,7 +167,7 @@ Voilà !
 
 ### CPU frequencies and _TurboBoost_
 
-To have more control on performance, the Gnome Shell Extension _CpuFreq_ is perfect. With this extension you can check the actual frequencies and choose which governor you want (powersave, performance etc).
+To have more control on performance, the Gnome Shell Extension [_CpuFreq_](https://extensions.gnome.org/extension/1082/cpufreq/) is perfect. With this extension you can check the actual frequencies and choose which governor you want (powersave, performance etc).
 
 I prefere to disable _TurboBoost_, because I don't really see any difference on performance. But with _TurboBoost_ off, fans are off too !
 
