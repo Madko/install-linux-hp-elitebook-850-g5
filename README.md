@@ -14,6 +14,7 @@ Basic functionality is working (kernel 4.20.3-200.fc29.x86_64) :
 * Mouse button (to steer the mouse pointer)
 * Adaptive brightness (as weird as with _Windows_)
 * Webcam
+* HDMI external port (up to 4K)
 * Thermal sensors
 
 I haven't tested much more than that.
@@ -30,7 +31,6 @@ What is not working :
 
 To be tested :
 
-* HDMI external port
 * Thunderbolt 3 port
 * WWAN LTE card (not even sure I've got one)
 
