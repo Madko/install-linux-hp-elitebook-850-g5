@@ -178,12 +178,12 @@ and install a newer version of the _BIOS_.
 
 Actual version of the _BIOS_ :
 
-    Version: Q78 Ver. 01.04.00
-    Release Date: 09/12/2018
+    Version: Q78 Ver. 01.06.00
+    Release Date: 01/03/2019 
 
 An even newer version of the _BIOS_ is available from the HP web page :
 
-    HP Firmware Pack (Q78) 01.04.00 Rev.A	16.5 MB	Oct 11, 2018
+    HP Firmware Pack (Q78) 01.06.00 Rev.A	16.6 MB	Feb 1, 2019
 
 https://support.hp.com/us-en/drivers/selfservice/hp-elitebook-850-g5-notebook-pc/18491276
 
