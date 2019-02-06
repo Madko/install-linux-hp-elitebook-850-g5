@@ -234,7 +234,7 @@ See the output in [output/dmesg.txt](output/dmesg.txt)
     linux@laptop:~$ sensors > output/sensors.txt
     linux@laptop:~$
 
-See the output in [output/dmesg.txt](output/dmesg.txt)
+See the output in [output/sensors.txt](output/sensors.txt)
 
 ## Other references
 
