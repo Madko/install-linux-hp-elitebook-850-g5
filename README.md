@@ -22,7 +22,7 @@ I haven't tested much more than that.
 What seems buggy :
 
 * Touchpad was once stuck in scrolling mode
-* Reboots often end on a black screen
+* Reboots often end on a black screen (fixed with boot option _reboot=efi_)
 
 What is not working :
 
@@ -137,10 +137,38 @@ Here is the partition table :
       ├─fedora-swap [SWAP]                      swap
       └─fedora-home /home                       ext4
 
-    
+
 The EXT4 file system is used with LVM, ie default partitionning scheme from Fedora.
 
 ## Tuning
+
+### Hanging reboots
+
+It seems that by default, Fedora (or systemd) is not sending the right kind of signal this machine is waiting for reboot. To fix that, you need to add the type of signal at the boot options. Here are the steps, first add _reboot=efi_ at the very end of the line **GRUB_CMDLINE_LINUX=** :
+
+    sudoedit /etc/default/grub
+
+You should have this content :
+
+    GRUB_TIMEOUT=5
+    GRUB_DISTRIBUTOR="$(sed 's, release .\*$,,g' /etc/system-release)"
+    GRUB_DEFAULT=saved
+    GRUB_DISABLE_SUBMENU=true
+    GRUB_TERMINAL_OUTPUT="console"
+    GRUB_CMDLINE_LINUX="resume=/dev/mapper/fedora-swap rd.lvm.lv=fedora/root rd.lvm.lv=fedora/swap rhgb quiet reboot=efi"
+    GRUB_DISABLE_RECOVERY="true"
+
+Then you need to regenerate grub2 actual configuration file¹ :
+
+    sudo grub2-mkconfig -o /etc/grub2-efi.cfg
+
+Then to validate that's has been taken, you reboot and check cmdline :
+
+    cat /proc/cmdline
+
+You must see the _reboot=efi_ there.
+
+[¹] If for any reason you are not using EFI and secure boot, the right output file is _/etc/grub2.cfg_.
 
 ### Sound mute button _LED_
 
