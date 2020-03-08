@@ -1,12 +1,19 @@
-# Running Linux (Fedora 29) on HP Elitebook 850 G5
+# Running Linux (Fedora 29 or newer) on HP Elitebook 850 G5
 
 Sharing some experiences about running Fedora on an HP Elitebook 850 G5 laptop.
 
 Right now this document is only half-way finished. Hopefully I will find time to provide some more information.
 
+I first was using Fedora 29, then
+
+ * upgraded to Fedora 30 => same experience
+ * upgraded to Fedora 31 => same experience, almost everything is OK
+
+I will try to keep this document up to date.
+
 ## What works
 
-Basic functionality is working (kernel 4.20.3-200.fc29.x86_64) :
+Basic functionality is working (kernel 5.5.7-200.fc31.x86_64) :
 
 * WIFI
 * Keyboard, keyboard backlight and shortcuts
@@ -16,13 +23,6 @@ Basic functionality is working (kernel 4.20.3-200.fc29.x86_64) :
 * Webcam
 * HDMI external port (up to 4K)
 * Thermal sensors
-
-I haven't tested much more than that.
-
-What seems buggy :
-
-* Touchpad was once stuck in scrolling mode
-* Reboots often end on a black screen (fixed with boot option _reboot=efi_)
 
 What is not working :
 
@@ -90,7 +90,7 @@ Here is the steps to reduce C:\ volume :
 * Reduce this volume, by default it's set on half its size
 * Accept the changes and reboot
 
-Download **Fedora 29 Workstation Live x86_64** and write it on an USB drive.
+Download **Fedora 31 Workstation Live x86_64** and write it on an USB drive.
 
 If _Windows_ was pre-installed, _secure boot_ is enabled and you will get "Image did not authenticate", preventing you to boot any other OS.
 
