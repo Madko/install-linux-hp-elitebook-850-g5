@@ -11,14 +11,14 @@ computer
        product: 83B2
        vendor: HP
        physical id: 0
-       version: KBC Version 04.57.00
+       version: KBC Version 04.68.00
        serial: [REMOVED]
      *-firmware
           description: BIOS
           vendor: HP
           physical id: 1
-          version: Q78 Ver. 01.06.00
-          date: 01/03/2019
+          version: Q78 Ver. 01.12.00
+          date: 07/28/2020
           size: 64KiB
           capacity: 32MiB
           capabilities: pci pcmcia upgrade shadowing cdboot bootselect edd int5printscreen int9keyboard int14serial int17printer acpi usb smartbattery biosbootspecification netboot uefi
@@ -26,19 +26,25 @@ computer
           description: System Memory
           physical id: 7
           slot: System board or motherboard
-          size: 8GiB
+          size: 32GiB
         *-bank:0
-             description: [empty]
+             description: SODIMM DDR4 Synchronous Unbuffered (Unregistered) 2400 MHz (0,4 ns)
+             product: 16ATF2G64HZ-2G6E3
+             vendor: Micron
              physical id: 0
+             serial: [REMOVED]
              slot: Bottom-Slot 1(left)
+             size: 16GiB
+             width: 64 bits
+             clock: 2400MHz (0.4ns)
         *-bank:1
              description: SODIMM DDR4 Synchronous Unbuffered (Unregistered) 2400 MHz (0,4 ns)
-             product: 8ATF1G64HZ-2G6E1
+             product: 16ATF2G64HZ-2G6E3
              vendor: Micron
              physical id: 1
              serial: [REMOVED]
              slot: Bottom-Slot 2(right)
-             size: 8GiB
+             size: 16GiB
              width: 64 bits
              clock: 2400MHz (0.4ns)
      *-cache:0
@@ -74,11 +80,11 @@ computer
           version: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz
           serial: [REMOVED]
           slot: U3E1
-          size: 1800MHz
+          size: 2876MHz
           capacity: 4GHz
           width: 64 bits
           clock: 100MHz
-          capabilities: lm fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp x86-64 constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp flush_l1d cpufreq
+          capabilities: lm fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp x86-64 constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d cpufreq
           configuration: cores=4 enabledcores=4 threads=8
      *-pci
           description: Host bridge
@@ -103,7 +109,7 @@ computer
              clock: 33MHz
              capabilities: pciexpress msi pm vga_controller bus_master cap_list rom fb
              configuration: depth=32 driver=i915 latency=0 mode=3840x2160 visual=truecolor xres=3840 yres=2160
-             resources: iomemory:1f0-1ef iomemory:1f0-1ef irq:130 memory:1ff2000000-1ff2ffffff memory:1fc0000000-1fcfffffff ioport:3000(size=64) memory:c0000-dffff
+             resources: iomemory:1f0-1ef iomemory:1f0-1ef irq:141 memory:1ff2000000-1ff2ffffff memory:1fc0000000-1fcfffffff ioport:3000(size=64) memory:c0000-dffff
         *-generic:0
              description: Signal processing controller
              product: Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Thermal Subsystem
@@ -139,25 +145,72 @@ computer
              clock: 33MHz
              capabilities: pm msi xhci bus_master cap_list
              configuration: driver=xhci_hcd latency=0
-             resources: irq:126 memory:b6320000-b632ffff
+             resources: irq:128 memory:b6320000-b632ffff
            *-usbhost:0
                 product: xHCI Host Controller
-                vendor: Linux 4.20.6-200.fc29.x86_64 xhci-hcd
+                vendor: Linux 5.8.13-200.fc32.x86_64 xhci-hcd
                 physical id: 0
                 bus info: usb@1
                 logical name: usb1
-                version: 4.20
+                version: 5.08
                 capabilities: usb-2.00
                 configuration: driver=hub slots=12 speed=480Mbit/s
               *-usb:0
+                   description: Keyboard
+                   product: USB Receiver
+                   vendor: Logitech
+                   physical id: 1
+                   bus info: usb@1:1
+                   version: 24.07
+                   capabilities: usb-2.00
+                   configuration: driver=usbhid maxpower=98mA speed=12Mbit/s
+              *-usb:1
+                   description: Communication device
+                   product: HP lt4132 LTE/HSPA+ 4G Module
+                   vendor: HP Inc.
+                   physical id: 3
+                   bus info: usb@1:3
+                   version: 1.02
+                   serial: [REMOVED]
+                   capabilities: usb-2.00
+                   configuration: driver=option maxpower=2mA speed=480Mbit/s
+              *-usb:2
+                   description: USB hub
+                   product: USB2.1 Hub
+                   vendor: GenesysLogic
+                   physical id: 5
+                   bus info: usb@1:5
+                   version: 6.53
+                   capabilities: usb-2.10
+                   configuration: driver=hub maxpower=100mA slots=4 speed=480Mbit/s
+                 *-usb
+                      description: USB hub
+                      product: USB2.1 Hub
+                      vendor: GenesysLogic
+                      physical id: 4
+                      bus info: usb@1:5.4
+                      version: 6.53
+                      capabilities: usb-2.10
+                      configuration: driver=hub maxpower=100mA slots=4 speed=480Mbit/s
+                    *-usb UNCLAIMED
+                         description: Generic USB device
+                         product: Generic Billboard Device
+                         vendor: Fresco Logic, Inc
+                         physical id: 3
+                         bus info: usb@1:5.4.3
+                         version: 1.00
+                         capabilities: usb-2.01
+                         configuration: speed=12Mbit/s
+              *-usb:3
                    description: Bluetooth wireless interface
+                   product: Bluetooth wireless interface
                    vendor: Intel Corp.
                    physical id: 7
                    bus info: usb@1:7
                    version: 0.10
                    capabilities: bluetooth usb-2.00
                    configuration: driver=btusb maxpower=100mA speed=12Mbit/s
-              *-usb:1 UNCLAIMED
+              *-usb:4 UNCLAIMED
                    description: Generic USB device
                    vendor: Validity Sensors, Inc.
                    physical id: 8
@@ -166,7 +219,7 @@ computer
                    serial: [REMOVED]
                    capabilities: usb-2.00
                    configuration: maxpower=100mA speed=12Mbit/s
-              *-usb:2
+              *-usb:5
                    description: Video
                    product: HP HD Camera
                    vendor: Quanta
@@ -178,11 +231,11 @@ computer
                    configuration: driver=uvcvideo maxpower=500mA speed=480Mbit/s
            *-usbhost:1
                 product: xHCI Host Controller
-                vendor: Linux 4.20.6-200.fc29.x86_64 xhci-hcd
+                vendor: Linux 5.8.13-200.fc32.x86_64 xhci-hcd
                 physical id: 1
                 bus info: usb@2
                 logical name: usb2
-                version: 4.20
+                version: 5.08
                 capabilities: usb-3.00
                 configuration: driver=hub slots=6 speed=5000Mbit/s
         *-generic:2
@@ -232,10 +285,10 @@ computer
              clock: 33MHz
              capabilities: pm msi bus_master cap_list
              configuration: driver=mei_me latency=0
-             resources: iomemory:1f0-1ef irq:139 memory:1ff301d000-1ff301dfff
+             resources: iomemory:1f0-1ef irq:158 memory:1ff301d000-1ff301dfff
         *-pci:0
              description: PCI bridge
-             product: Intel Corporation
+             product: Sunrise Point-LP PCI Express Root Port #4
              vendor: Intel Corporation
              physical id: 1c
              bus info: pci@0000:00:1c.0
@@ -257,8 +310,8 @@ computer
                 width: 64 bits
                 clock: 33MHz
                 capabilities: pm msi pciexpress bus_master cap_list ethernet physical wireless
-                configuration: broadcast=yes driver=iwlwifi driverversion=4.20.6-200.fc29.x86_64 firmware=36.9f0a2d68.0 ip=[REMOVED] latency=0 link=yes multicast=yes wireless=IEEE 802.11
-                resources: irq:159 memory:b6200000-b6201fff
+                configuration: broadcast=yes driver=iwlwifi driverversion=5.8.13-200.fc32.x86_64 firmware=36.79ff3ccf.0 8265-36.ucode ip=[REMOVED] latency=0 link=yes multicast=yes wireless=IEEE 802.11
+                resources: irq:161 memory:b6200000-b6201fff
         *-pci:1
              description: PCI bridge
              product: Sunrise Point-LP PCI Express Root Port #5
@@ -294,7 +347,7 @@ computer
                    clock: 33MHz
                    capabilities: pci pm msi pciexpress normal_decode bus_master cap_list
                    configuration: driver=pcieport
-                   resources: irq:16 memory:b6000000-b60fffff
+                   resources: irq:125 memory:b6000000-b60fffff
                  *-generic
                       description: System peripheral
                       product: JHL6340 Thunderbolt 3 NHI (C step) [Alpine Ridge 2C 2016]
@@ -318,7 +371,7 @@ computer
                    clock: 33MHz
                    capabilities: pci pm msi pciexpress normal_decode bus_master cap_list
                    configuration: driver=pcieport
-                   resources: irq:125 ioport:4000(size=4096) memory:a0000000-b5efffff ioport:1fd0000000(size=570425344)
+                   resources: irq:126 ioport:4000(size=4096) memory:a0000000-b5efffff ioport:1fd0000000(size=570425344)
               *-pci:2
                    description: PCI bridge
                    product: JHL6340 Thunderbolt 3 Bridge (C step) [Alpine Ridge 2C 2016]
@@ -330,37 +383,90 @@ computer
                    clock: 33MHz
                    capabilities: pci pm msi pciexpress normal_decode bus_master cap_list
                    configuration: driver=pcieport
-                   resources: irq:18 memory:b5f00000-b5ffffff
+                   resources: irq:127 memory:b5f00000-b5ffffff
                  *-usb
                       description: USB controller
-                      product: Intel Corporation
+                      product: JHL6340 Thunderbolt 3 USB 3.1 Controller (C step) [Alpine Ridge 2C 2016]
                       vendor: Intel Corporation
                       physical id: 0
                       bus info: pci@0000:3a:00.0
                       version: 02
                       width: 32 bits
                       clock: 33MHz
-                      capabilities: pm msi pciexpress xhci cap_list
+                      capabilities: pm msi pciexpress xhci bus_master cap_list
                       configuration: driver=xhci_hcd latency=0
-                      resources: irq:127 memory:b5f00000-b5f0ffff
+                      resources: irq:129 memory:b5f00000-b5f0ffff
                     *-usbhost:0
                          product: xHCI Host Controller
-                         vendor: Linux 4.20.6-200.fc29.x86_64 xhci-hcd
+                         vendor: Linux 5.8.13-200.fc32.x86_64 xhci-hcd
                          physical id: 0
                          bus info: usb@3
                          logical name: usb3
-                         version: 4.20
+                         version: 5.08
                          capabilities: usb-2.00
                          configuration: driver=hub slots=2 speed=480Mbit/s
                     *-usbhost:1
                          product: xHCI Host Controller
-                         vendor: Linux 4.20.6-200.fc29.x86_64 xhci-hcd
+                         vendor: Linux 5.8.13-200.fc32.x86_64 xhci-hcd
                          physical id: 1
                          bus info: usb@4
                          logical name: usb4
-                         version: 4.20
+                         version: 5.08
                          capabilities: usb-3.10
                          configuration: driver=hub slots=2 speed=10000Mbit/s
+                       *-usb
+                            description: USB hub
+                            product: USB3.1 Hub
+                            vendor: GenesysLogic
+                            physical id: 1
+                            bus info: usb@4:1
+                            version: 6.53
+                            capabilities: usb-3.10
+                            configuration: driver=hub slots=4 speed=5000Mbit/s
+                          *-usb
+                               description: USB hub
+                               product: USB3.1 Hub
+                               vendor: GenesysLogic
+                               physical id: 4
+                               bus info: usb@4:1.4
+                               version: 6.53
+                               capabilities: usb-3.10
+                               configuration: driver=hub slots=4 speed=5000Mbit/s
+                             *-usb:0
+                                  description: Generic USB device
+                                  product: USB 10/100/1000 LAN
+                                  vendor: Realtek
+                                  physical id: 1
+                                  bus info: usb@4:1.4.1
+                                  version: 31.00
+                                  serial: [REMOVED]
+                                  capabilities: usb-3.00
+                                  configuration: driver=r8152 maxpower=288mA speed=5000Mbit/s
+                             *-usb:1
+                                  description: Mass storage device
+                                  product: USB3.0 Card Reader
+                                  vendor: Generic
+                                  physical id: 4
+                                  bus info: usb@4:1.4.4
+                                  logical name: scsi0
+                                  version: 15.37
+                                  serial: [REMOVED]
+                                  capabilities: usb-3.10 scsi emulated scsi-host
+                                  configuration: driver=usb-storage maxpower=896mA speed=5000Mbit/s
+                                *-disk
+                                     description: SCSI Disk
+                                     product: MassStorageClass
+                                     vendor: Generic
+                                     physical id: 0.0.0
+                                     bus info: scsi@0:0.0.0
+                                     logical name: /dev/sda
+                                     version: 1537
+                                     serial: [REMOVED]
+                                     capabilities: removable
+                                     configuration: ansiversion=6 logicalsectorsize=512 sectorsize=512
+                                   *-medium
+                                        physical id: 0
+                                        logical name: /dev/sda
         *-pci:2
              description: PCI bridge
              product: Sunrise Point-LP PCI Express Root Port #9
@@ -373,21 +479,97 @@ computer
              capabilities: pci pciexpress msi pm normal_decode bus_master cap_list
              configuration: driver=pcieport
              resources: irq:124 memory:b6100000-b61fffff
-           *-storage
-                description: Non-Volatile memory controller
-                product: NVMe SSD Controller SM981/PM981
-                vendor: Samsung Electronics Co Ltd
+           *-nvme
+                description: NVMe device
+                product: WDS100T3X0C-00SJG0
+                vendor: Sandisk Corp
                 physical id: 0
                 bus info: pci@0000:3b:00.0
-                version: 00
+                logical name: /dev/nvme0
+                version: 102000WD
+                serial: [REMOVED]
                 width: 64 bits
                 clock: 33MHz
-                capabilities: storage pm msi pciexpress msix nvm_express bus_master cap_list
-                configuration: driver=nvme latency=0
-                resources: irq:16 memory:b6100000-b6103fff
+                capabilities: nvme pm msi msix pciexpress nvm_express bus_master cap_list
+                configuration: driver=nvme latency=0 nqn=nqn.2018-01.com.wdc:nguid:185218420212-0001-001B444A449158E5 state=live
+                resources: irq:16 memory:b6100000-b6103fff memory:b6104000-b61040ff
+              *-namespace
+                   description: NVMe disk
+                   physical id: 1
+                   bus info: nvme@0:1
+                   logical name: /dev/nvme0n1
+                   size: 931GiB (1TB)
+                   capabilities: gpt-1.00 partitioned partitioned:gpt
+                   configuration: guid=67918adf-f97a-4a3b-a5af-65f0f311fb7b logicalsectorsize=512 sectorsize=512 wwid=eui.1852184202120001001b444a449158e5
+                 *-volume:0 UNCLAIMED
+                      description: Windows FAT volume
+                      vendor: MSDOS5.0
+                      physical id: 1
+                      bus info: nvme@0:1,1
+                      version: FAT32
+                      serial: [REMOVED]
+                      size: 355MiB
+                      capacity: 359MiB
+                      capabilities: boot fat initialized
+                      configuration: FATs=2 filesystem=fat label=SYSTEM name=EFI System Partition
+                 *-volume:1
+                      description: reserved partition
+                      vendor: Windows
+                      physical id: 2
+                      bus info: nvme@0:1,2
+                      logical name: /dev/nvme0n1p2
+                      serial: [REMOVED]
+                      capacity: 127MiB
+                      capabilities: nofs
+                      configuration: name=Microsoft reserved partition
+                 *-volume:2
+                      description: Windows NTFS volume
+                      vendor: Windows
+                      physical id: 3
+                      bus info: nvme@0:1,3
+                      logical name: /dev/nvme0n1p3
+                      version: 3.1
+                      serial: [REMOVED]
+                      size: 475GiB
+                      capacity: 475GiB
+                      capabilities: ntfs initialized
+                      configuration: clustersize=4096 created=2018-09-28 04:46:34 filesystem=ntfs label=Windows name=Basic data partition state=clean
+                 *-volume:3
+                      description: Windows NTFS volume
+                      vendor: Windows
+                      physical id: 4
+                      bus info: nvme@0:1,4
+                      logical name: /dev/nvme0n1p4
+                      version: 3.1
+                      serial: [REMOVED]
+                      size: 904MiB
+                      capacity: 914MiB
+                      capabilities: boot precious ntfs initialized
+                      configuration: clustersize=4096 created=2019-04-02 21:05:43 filesystem=ntfs name=Basic data partition state=clean
+                 *-volume:4
+                      description: EXT4 volume
+                      vendor: Linux
+                      physical id: 5
+                      bus info: nvme@0:1,5
+                      logical name: /dev/nvme0n1p5
+                      logical name: /boot
+                      version: 1.0
+                      serial: [REMOVED]
+                      size: 1GiB
+                      capabilities: journaled extended_attributes large_files huge_files dir_nlink recover 64bit extents ext4 ext2 initialized
+                      configuration: created=2019-08-24 20:04:40 filesystem=ext4 lastmountpoint=/boot modified=2020-10-08 09:00:14 mount.fstype=ext4 mount.options=rw,seclabel,relatime mounted=2020-10-08 09:00:14 state=mounted
+                 *-volume:5
+                      description: LVM Physical Volume
+                      vendor: Linux
+                      physical id: 6
+                      bus info: nvme@0:1,6
+                      logical name: /dev/nvme0n1p6
+                      serial: [REMOVED]
+                      size: 453GiB
+                      capabilities: multi lvm2
         *-isa
              description: ISA bridge
-             product: Intel(R) 100 Series Chipset Family LPC Controller/eSPI Controller - 9D4E
+             product: Sunrise Point LPC Controller/eSPI Controller
              vendor: Intel Corporation
              physical id: 1f
              bus info: pci@0000:00:1f.0
@@ -418,7 +600,7 @@ computer
              clock: 33MHz
              capabilities: pm msi bus_master cap_list
              configuration: driver=snd_hda_intel latency=64
-             resources: iomemory:1f0-1ef iomemory:1f0-1ef irq:160 memory:1ff3018000-1ff301bfff memory:1ff3000000-1ff300ffff
+             resources: iomemory:1f0-1ef iomemory:1f0-1ef irq:162 memory:1ff3018000-1ff301bfff memory:1ff3000000-1ff300ffff
         *-serial
              description: SMBus
              product: Sunrise Point-LP SMBus
@@ -442,9 +624,9 @@ computer
              capacity: 1Gbit/s
              width: 32 bits
              clock: 33MHz
-             capabilities: pm msi cap_list ethernet physical tp 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation
+             capabilities: pm msi bus_master cap_list ethernet physical tp 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation
              configuration: autonegotiation=on broadcast=yes driver=e1000e driverversion=3.2.6-k firmware=0.1-4 latency=0 link=no multicast=yes port=twisted pair
-             resources: irq:128 memory:b6300000-b631ffff
+             resources: irq:131 memory:b6300000-b631ffff
      *-pnp00:00
           product: PnP device PNP0c02
           physical id: 0
@@ -466,28 +648,28 @@ computer
           capabilities: pnp
           configuration: driver=system
      *-pnp00:04
-          product: PnP device PNP0b00
-          physical id: 5
-          capabilities: pnp
-          configuration: driver=rtc_cmos
-     *-pnp00:05
           product: PnP device INT3f0d
           vendor: Interphase Corporation
-          physical id: 6
+          physical id: 5
           capabilities: pnp
           configuration: driver=system
-     *-pnp00:06
+     *-pnp00:05
           product: PnP device HPQ8002
           vendor: HP
-          physical id: 8
+          physical id: 6
           capabilities: pnp
           configuration: driver=i8042 kbd
-     *-pnp00:07
+     *-pnp00:06
           product: PnP device SYN3072
           vendor: Synaptics Inc
-          physical id: 9
+          physical id: 8
           capabilities: pnp
           configuration: driver=i8042 aux
+     *-pnp00:07
+          product: PnP device PNP0c02
+          physical id: 9
+          capabilities: pnp
+          configuration: driver=system
      *-pnp00:08
           product: PnP device PNP0c02
           physical id: a
@@ -503,11 +685,22 @@ computer
           physical id: c
           capabilities: pnp
           configuration: driver=system
-     *-pnp00:0b
-          product: PnP device PNP0c02
+     *-scsi
           physical id: 11
-          capabilities: pnp
-          configuration: driver=system
+          logical name: scsi1
+        *-disk
+             description: EXT4 volume
+             product: iSCSI Storage
+             vendor: Linux
+             physical id: 0.0.1
+             bus info: scsi@1:0.0.1
+             logical name: /dev/sdb
+             logical name: /mnt/iscsi
+             version: 1.0
+             serial: [REMOVED]
+             size: 200GiB
+             capabilities: journaled extended_attributes large_files huge_files dir_nlink recover 64bit extents ext4 ext2 initialized
+             configuration: ansiversion=5 created=2020-04-09 17:00:01 filesystem=ext4 label=nas-iscsi lastmountpoint=/mnt/iscsi logicalsectorsize=512 modified=2020-10-08 09:03:29 mount.fstype=ext4 mount.options=rw,seclabel,relatime mounted=2020-10-08 09:03:29 sectorsize=512 state=mounted
   *-battery
        product: TT03056XL
        vendor: 333-42-17-A
@@ -518,15 +711,18 @@ computer
   *-network:0
        description: Ethernet interface
        physical id: 2
-       logical name: virbr0
-       serial: [REMOVED]
-       capabilities: ethernet physical
-       configuration: broadcast=yes driver=bridge driverversion=2.3 firmware=N/A ip=[REMOVED] link=no multicast=yes
-  *-network:1 DISABLED
-       description: Ethernet interface
-       physical id: 3
-       logical name: virbr0-nic
+       bus info: usb@4:1.4.1
+       logical name: ens4u1u4u1
        serial: [REMOVED]
        size: 10Mbit/s
+       capacity: 1Gbit/s
+       capabilities: ethernet physical tp mii 10bt 10bt-fd 100bt 100bt-fd 1000bt 1000bt-fd autonegotiation
+       configuration: autonegotiation=on broadcast=yes driver=r8152 driverversion=v1.11.11 duplex=half firmware=rtl8153b-2 v1 10/23/19 link=no multicast=yes port=MII speed=10Mbit/s
+  *-network:1
+       description: Ethernet interface
+       physical id: 3
+       bus info: usb@1:3
+       logical name: wwp0s20f0u3c3
+       serial: [REMOVED]
        capabilities: ethernet physical
-       configuration: autonegotiation=off broadcast=yes driver=tun driverversion=1.6 duplex=full link=no multicast=yes port=twisted pair speed=10Mbit/s
+       configuration: broadcast=yes driver=cdc_mbim driverversion=22-Aug-2005 firmware=CDC MBIM ip=[REMOVED] link=yes multicast=yes
