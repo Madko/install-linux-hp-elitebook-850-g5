@@ -31,10 +31,6 @@ What is not working :
 * Fingerprint sensor
 * Mic mute button
 
-To be tested :
-
-* WWAN LTE card (Huawei ME906s bought in october 2020 for ~30€)
-
 ## Customization of the laptop
 
 The laptop configuration was like this :
@@ -79,7 +75,7 @@ Upgrade I made :
 * RAM : 32 GB 
 * Operating system : Fedora
 * 1 TB SSD
-* WWAN LTE : Huawei ME906s
+* WWAN LTE : Huawei ME906s bought in october 2020 for ~30€
 
 ## Installation
 
