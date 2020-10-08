@@ -67,14 +67,14 @@ Short summary of hardware configuration :
 
 * RAM : 8 GB
 * Operating system : Windows 10 Pro
-* 512 GB SSD
-* 15.6" inch screen (resolution 3840x2160)
+* Storage : 512 GB SSD
+* Display : 15.6" inch screen (resolution 3840x2160)
 
 Upgrade I made :
 
 * RAM : 32 GB 
 * Operating system : Fedora
-* 1 TB SSD
+* Storage : 1 TB SSD
 * WWAN LTE : Huawei ME906s bought in october 2020 for ~30€
 
 ## Installation
