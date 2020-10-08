@@ -8,12 +8,13 @@ I first was using Fedora 29, then
 
  * upgraded to Fedora 30 => same experience
  * upgraded to Fedora 31 => same experience, almost everything is OK
+ * upgraded to Fedora 32 => same experience, almost everything is OK
 
 I will try to keep this document up to date.
 
 ## What works
 
-Basic functionality is working (kernel 5.5.7-200.fc31.x86_64) :
+Basic functionality is working (kernel 5.8.13-200.fc32.x86_64) :
 
 * WIFI
 * Keyboard, keyboard backlight and shortcuts
@@ -23,6 +24,7 @@ Basic functionality is working (kernel 5.5.7-200.fc31.x86_64) :
 * Webcam
 * HDMI external port (up to 4K)
 * Thermal sensors
+* Thunderbolt 3 port
 
 What is not working :
 
@@ -31,8 +33,7 @@ What is not working :
 
 To be tested :
 
-* Thunderbolt 3 port
-* WWAN LTE card (not even sure I've got one)
+* WWAN LTE card (Huawei ME906s bought in october 2020 for ~30€)
 
 ## Customization of the laptop
 
@@ -68,10 +69,17 @@ The laptop was delivered to me in the end of January 2019.
 
 Short summary of hardware configuration :
 
-* RAM : 8 GB RAM
+* RAM : 8 GB
 * Operating system : Windows 10 Pro
 * 512 GB SSD
 * 15.6" inch screen (resolution 3840x2160)
+
+Upgrade I made :
+
+* RAM : 32 GB 
+* Operating system : Fedora
+* 1 TB SSD
+* WWAN LTE : Huawei ME906s
 
 ## Installation
 
